@@ -12,6 +12,7 @@
 
   &__logo {
     margin-right: 56px;
+    cursor: pointer;
   }
 
   &__input {
@@ -21,9 +22,9 @@
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     border: none;
+    outline: none;
 
     &::placeholder {
-      font-family: "Rubik";
       font-style: normal;
       font-weight: normal;
       font-size: 13px;
@@ -34,15 +35,16 @@
 
   &__regime {
     margin-right: 15px;
+    cursor: pointer;
   }
 
   &__logout-btn {
-    font-family: "Rubik";
     line-height: 19px;
     color: #ffffff;
     background-color: #0d75ff;
     border-radius: 4px;
     border: none;
     padding: 10px 23px;
+    cursor: pointer;
   }
 }

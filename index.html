@@ -26,6 +26,7 @@
                 type="text"
                 name="search"
                 placeholder="Search books"
+                autocomplete="off"
               />
             </div>
           </div>
@@ -43,7 +44,342 @@
         </div>
       </div>
     </header>
-    <main class="main"></main>
+
+    <main class="main">
+      <section class="hero">
+        <div class="container">
+          <div class="hero__body">
+            <p class="hero__search-result">Showing 18 Result(s)</p>
+
+            <button class="hero__btn">
+              <img
+                class="hero__btn-img"
+                src="./images/hero-orderby-newest-logo.svg"
+                alt="order by newest logo"
+                width="24"
+                height="24"
+              />
+              Order by newest
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container bloll">
+          <div class="books__body">
+            <div class="bookmarks">
+              <div class="container--bookmarks">
+                <div class="bookmarks__body">
+                  <h2 class="bookmarks__title">Bookmarks</h2>
+                  <p class="bookmarks__desc">
+                    If you don't like to read, you haven't found the right book
+                  </p>
+
+                  <ul class="bookmarks__list">
+                    <li class="bookmarks__item">
+                      <div class="bookmarks__item-infor">
+                        <h3 class="bookmarks__item-title">Python</h3>
+                        <p class="bookmarks__item-desc">David M. Beazley</p>
+                      </div>
+
+                      <div class="bookmarks__item-buttons-wrapper">
+                        <button class="bookmarks__item-read-btn">
+                          <img
+                            src="./images/bookmarks-read-logo.svg"
+                            alt="book's picture"
+                            width="24"
+                            height="24"
+                          />
+                        </button>
+                        <button class="bookmarks__item-delete-btn">
+                          <img
+                            src="./images/bookmarks-delete-logo.svg"
+                            alt="delete picture"
+                            width="24"
+                            height="24"
+                          />
+                        </button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="cards">
+              <div class="container--cards">
+                <div class="cards__body">
+                  <ul class="cards__list">
+                    <li class="cards__item">
+                      <div class="cards__item-top">
+                        <img
+                          class="cards__item-img"
+                          src="./images/cards-img.jpg"
+                          alt="card picture"
+                          width="201"
+                          height="202"
+                        />
+                      </div>
+
+                      <div class="cards__item-infor">
+                        <h3 class="cards__item-title">Python</h3>
+                        <p class="cards__item-desc">David M. Beazley</p>
+                        <p class="cards__item-year">2009</p>
+                      </div>
+
+                      <div class="cards__item-buttons">
+                        <div class="cards__item-buttons-top">
+                          <button class="cards__item-bookmark-btn">
+                            Bookmarks
+                          </button>
+                          <button class="cards__item-moreinfo-btn">
+                            More Info
+                          </button>
+                        </div>
+                        <button class="cards__item-read-btn">Read</button>
+                      </div>
+                    </li>
+                    <li class="cards__item">
+                      <div class="cards__item-top">
+                        <img
+                          class="cards__item-img"
+                          src="./images/cards-img.jpg"
+                          alt="card picture"
+                          width="201"
+                          height="202"
+                        />
+                      </div>
+
+                      <div class="cards__item-infor">
+                        <h3 class="cards__item-title">Python</h3>
+                        <p class="cards__item-desc">David M. Beazley</p>
+                        <p class="cards__item-year">2009</p>
+                      </div>
+
+                      <div class="cards__item-buttons">
+                        <div class="cards__item-buttons-top">
+                          <button class="cards__item-bookmark-btn">
+                            Bookmarks
+                          </button>
+                          <button class="cards__item-moreinfo-btn">
+                            More Info
+                          </button>
+                        </div>
+                        <button class="cards__item-read-btn">Read</button>
+                      </div>
+                    </li>
+                    <li class="cards__item">
+                      <div class="cards__item-top">
+                        <img
+                          class="cards__item-img"
+                          src="./images/cards-img.jpg"
+                          alt="card picture"
+                          width="201"
+                          height="202"
+                        />
+                      </div>
+
+                      <div class="cards__item-infor">
+                        <h3 class="cards__item-title">Python</h3>
+                        <p class="cards__item-desc">David M. Beazley</p>
+                        <p class="cards__item-year">2009</p>
+                      </div>
+
+                      <div class="cards__item-buttons">
+                        <div class="cards__item-buttons-top">
+                          <button class="cards__item-bookmark-btn">
+                            Bookmarks
+                          </button>
+                          <button class="cards__item-moreinfo-btn">
+                            More Info
+                          </button>
+                        </div>
+                        <button class="cards__item-read-btn">Read</button>
+                      </div>
+                    </li>
+                    <li class="cards__item">
+                      <div class="cards__item-top">
+                        <img
+                          class="cards__item-img"
+                          src="./images/cards-img.jpg"
+                          alt="card picture"
+                          width="201"
+                          height="202"
+                        />
+                      </div>
+
+                      <div class="cards__item-infor">
+                        <h3 class="cards__item-title">Python</h3>
+                        <p class="cards__item-desc">David M. Beazley</p>
+                        <p class="cards__item-year">2009</p>
+                      </div>
+
+                      <div class="cards__item-buttons">
+                        <div class="cards__item-buttons-top">
+                          <button class="cards__item-bookmark-btn">
+                            Bookmarks
+                          </button>
+                          <button class="cards__item-moreinfo-btn">
+                            More Info
+                          </button>
+                        </div>
+                        <button class="cards__item-read-btn">Read</button>
+                      </div>
+                    </li>
+                    <li class="cards__item">
+                      <div class="cards__item-top">
+                        <img
+                          class="cards__item-img"
+                          src="./images/cards-img.jpg"
+                          alt="card picture"
+                          width="201"
+                          height="202"
+                        />
+                      </div>
+
+                      <div class="cards__item-infor">
+                        <h3 class="cards__item-title">Python</h3>
+                        <p class="cards__item-desc">David M. Beazley</p>
+                        <p class="cards__item-year">2009</p>
+                      </div>
+
+                      <div class="cards__item-buttons">
+                        <div class="cards__item-buttons-top">
+                          <button class="cards__item-bookmark-btn">
+                            Bookmarks
+                          </button>
+                          <button class="cards__item-moreinfo-btn">
+                            More Info
+                          </button>
+                        </div>
+                        <button class="cards__item-read-btn">Read</button>
+                      </div>
+                    </li>
+                    <li class="cards__item">
+                      <div class="cards__item-top">
+                        <img
+                          class="cards__item-img"
+                          src="./images/cards-img.jpg"
+                          alt="card picture"
+                          width="201"
+                          height="202"
+                        />
+                      </div>
+
+                      <div class="cards__item-infor">
+                        <h3 class="cards__item-title">Python</h3>
+                        <p class="cards__item-desc">David M. Beazley</p>
+                        <p class="cards__item-year">2009</p>
+                      </div>
+
+                      <div class="cards__item-buttons">
+                        <div class="cards__item-buttons-top">
+                          <button class="cards__item-bookmark-btn">
+                            Bookmarks
+                          </button>
+                          <button class="cards__item-moreinfo-btn">
+                            More Info
+                          </button>
+                        </div>
+                        <button class="cards__item-read-btn">Read</button>
+                      </div>
+                    </li>
+                    <li class="cards__item">
+                      <div class="cards__item-top">
+                        <img
+                          class="cards__item-img"
+                          src="./images/cards-img.jpg"
+                          alt="card picture"
+                          width="201"
+                          height="202"
+                        />
+                      </div>
+
+                      <div class="cards__item-infor">
+                        <h3 class="cards__item-title">Python</h3>
+                        <p class="cards__item-desc">David M. Beazley</p>
+                        <p class="cards__item-year">2009</p>
+                      </div>
+
+                      <div class="cards__item-buttons">
+                        <div class="cards__item-buttons-top">
+                          <button class="cards__item-bookmark-btn">
+                            Bookmarks
+                          </button>
+                          <button class="cards__item-moreinfo-btn">
+                            More Info
+                          </button>
+                        </div>
+                        <button class="cards__item-read-btn">Read</button>
+                      </div>
+                    </li>
+                    <li class="cards__item">
+                      <div class="cards__item-top">
+                        <img
+                          class="cards__item-img"
+                          src="./images/cards-img.jpg"
+                          alt="card picture"
+                          width="201"
+                          height="202"
+                        />
+                      </div>
+
+                      <div class="cards__item-infor">
+                        <h3 class="cards__item-title">Python</h3>
+                        <p class="cards__item-desc">David M. Beazley</p>
+                        <p class="cards__item-year">2009</p>
+                      </div>
+
+                      <div class="cards__item-buttons">
+                        <div class="cards__item-buttons-top">
+                          <button class="cards__item-bookmark-btn">
+                            Bookmarks
+                          </button>
+                          <button class="cards__item-moreinfo-btn">
+                            More Info
+                          </button>
+                        </div>
+                        <button class="cards__item-read-btn">Read</button>
+                      </div>
+                    </li>
+                    <li class="cards__item">
+                      <div class="cards__item-top">
+                        <img
+                          class="cards__item-img"
+                          src="./images/cards-img.jpg"
+                          alt="card picture"
+                          width="201"
+                          height="202"
+                        />
+                      </div>
+
+                      <div class="cards__item-infor">
+                        <h3 class="cards__item-title">Python</h3>
+                        <p class="cards__item-desc">David M. Beazley</p>
+                        <p class="cards__item-year">2009</p>
+                      </div>
+
+                      <div class="cards__item-buttons">
+                        <div class="cards__item-buttons-top">
+                          <button class="cards__item-bookmark-btn">
+                            Bookmarks
+                          </button>
+                          <button class="cards__item-moreinfo-btn">
+                            More Info
+                          </button>
+                        </div>
+                        <button class="cards__item-read-btn">Read</button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="footer"></footer>
   </body>

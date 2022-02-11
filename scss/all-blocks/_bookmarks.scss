@@ -1,0 +1,69 @@
+.books__body {
+  display: flex;
+}
+
+.container--bookmarks {
+  width: 243px;
+  padding: 25px 25px 0 0;
+}
+.bookmarks {
+  width: 243px;
+
+  &__title {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 5px;
+  }
+
+  &__desc {
+    font-size: 14px;
+    line-height: 155.6%;
+    margin-bottom: 25px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 10px;
+    background-color: #f8fafd;
+    border-radius: 4px;
+
+    &-title {
+      font-size: 16px;
+      line-height: 19px;
+      font-weight: normal;
+      font-style: normal;
+      margin-bottom: 5px;
+    }
+
+    &-desc {
+      font-family: "Noto Sans Armenian";
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 18px;
+      color: #757881;
+    }
+
+    &-read-btn {
+      border: none;
+      background-color: transparent;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+
+    &-delete-btn {
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+    }
+  }
+}

@@ -383,6 +383,13 @@ template {
   src: url("../fonts/dancing-script-v22-latin-regular.woff2") format("woff2"), url("../fonts/dancing-script-v22-latin-regular.woff") format("woff"), url("../fonts/dancing-script-v22-latin-regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Noto Sans Armenian";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/noto-sans-armenian-v28-armenian-500.woff2") format("woff2"), url("../fonts/noto-sans-armenian-v28-armenian-500.woff") format("woff"), url("../fonts/noto-sans-armenian-v28-armenian-500.ttf") format("truetype");
+}
+
 html {
   height: 100%;
   scroll-behavior: smooth;
@@ -652,6 +659,7 @@ ul {
 
 .header__logo {
   margin-right: 56px;
+  cursor: pointer;
 }
 
 .header__input {
@@ -662,10 +670,10 @@ ul {
           box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
   border: none;
+  outline: none;
 }
 
 .header__input::-webkit-input-placeholder {
-  font-family: "Rubik";
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
@@ -674,7 +682,6 @@ ul {
 }
 
 .header__input:-ms-input-placeholder {
-  font-family: "Rubik";
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
@@ -683,7 +690,6 @@ ul {
 }
 
 .header__input::-ms-input-placeholder {
-  font-family: "Rubik";
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
@@ -692,7 +698,6 @@ ul {
 }
 
 .header__input::placeholder {
-  font-family: "Rubik";
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
@@ -702,21 +707,265 @@ ul {
 
 .header__regime {
   margin-right: 15px;
+  cursor: pointer;
 }
 
 .header__logout-btn {
-  font-family: "Rubik";
   line-height: 19px;
   color: #ffffff;
   background-color: #0d75ff;
   border-radius: 4px;
   border: none;
   padding: 10px 23px;
+  cursor: pointer;
 }
 
 .main {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+.hero {
+  padding: 11px 0;
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+}
+
+.hero__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.hero__search-result {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #222531;
+}
+
+.hero__btn {
+  padding: 5px 13px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  background-color: #a6b0c3;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.hero__btn-img {
+  margin-right: 5px;
+}
+
+.books__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container--bookmarks {
+  width: 243px;
+  padding: 25px 25px 0 0;
+}
+
+.bookmarks {
+  width: 243px;
+}
+
+.bookmarks__title {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 5px;
+}
+
+.bookmarks__desc {
+  font-size: 14px;
+  line-height: 155.6%;
+  margin-bottom: 25px;
+}
+
+.bookmarks__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+}
+
+.bookmarks__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px 10px;
+  background-color: #f8fafd;
+  border-radius: 4px;
+}
+
+.bookmarks__item-title {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: normal;
+  font-style: normal;
+  margin-bottom: 5px;
+}
+
+.bookmarks__item-desc {
+  font-family: "Noto Sans Armenian";
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  color: #757881;
+}
+
+.bookmarks__item-read-btn {
+  border: none;
+  background-color: transparent;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.bookmarks__item-delete-btn {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.cards__body {
+  padding: 40px 0 33px 39px;
+  background-color: #f8fafd;
+}
+
+.cards__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
+  margin: -16.5px;
+}
+
+.cards__item {
+  padding: 13px 15px 13px 18px;
+  margin: 16.5px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: white;
+}
+
+.cards__item-top {
+  padding: 18px 28px 18px 20px;
+  background-color: #f8fafd;
+  border-radius: 5px;
+  margin-bottom: 19px;
+}
+
+.cards__item-img {
+  border-radius: 5px;
+}
+
+.cards__item-infor {
+  padding-left: 3px;
+}
+
+.cards__item-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  margin-bottom: 2px;
+}
+
+.cards__item-desc, .cards__item-year {
+  font-family: "Noto Sans Armenian";
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  color: #757881;
+}
+
+.cards__item-year {
+  margin-bottom: 10px;
+}
+
+.cards__item-buttons {
+  padding-left: 3px;
+}
+
+.cards__item-buttons-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.cards__item-bookmark-btn {
+  width: 120px;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 4px;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  background-color: #ffd80d;
+  cursor: pointer;
+}
+
+.cards__item-moreinfo-btn {
+  width: 120px;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 4px;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  background-color: rgba(13, 117, 255, 0.05);
+  color: #0d75ff;
+  cursor: pointer;
+}
+
+.cards__item-read-btn {
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  border-radius: 4px;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: white;
+  background-color: #75828a;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */
