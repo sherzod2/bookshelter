@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <header></header>
+
+    <main class="main main--login">
+      <section class="login">
+        <div class="container container--login">
+          <div class="login__body">
+            <img
+              class="login__logo"
+              src="./images/login-logo.svg"
+              alt="bookshelter logosi"
+              width="226"
+              height="44"
+            />
+            <form class="login__form" action="">
+              <div class="login__username-wrapper">
+                <!-- <img
+                  class="login__username-img"
+                  src="./images/login-user-logo.svg"
+                  alt="user logosi"
+                  width="20"
+                  height="20"
+                /> -->
+                <input
+                  id="input1"
+                  class="login__username"
+                  type="text"
+                  name="user_name"
+                  placeholder="Username"
+                  required
+                  autocomplete="off"
+                />
+              </div>
+              <div>
+                <input
+                  class="login__password"
+                  type="password"
+                  name="user_password"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <button class="login__btn" type="submit">login</button>
+              <p class="login__forgot">Forgot password?</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
