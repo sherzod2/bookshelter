@@ -1,6 +1,5 @@
 .cards {
   &__body {
-    padding: 40px 0 33px 39px;
     background-color: #f8fafd;
   }
 
@@ -10,6 +9,7 @@
     flex-wrap: wrap;
     list-style: none;
     margin: -16.5px;
+    padding: 40px 0 15px 39px;
   }
 
   &__item {

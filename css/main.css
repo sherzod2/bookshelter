@@ -854,7 +854,6 @@ ul {
 }
 
 .cards__body {
-  padding: 40px 0 33px 39px;
   background-color: #f8fafd;
 }
 
@@ -869,6 +868,7 @@ ul {
       flex-wrap: wrap;
   list-style: none;
   margin: -16.5px;
+  padding: 40px 0 15px 39px;
 }
 
 .cards__item {
@@ -967,5 +967,89 @@ ul {
   color: white;
   background-color: #75828a;
   cursor: pointer;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 14px 0 40px;
+}
+
+.pagination__prev-btn {
+  padding: 4px;
+  border: none;
+  background-color: #919eab;
+  opacity: 0.5;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.pagination__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+}
+
+.pagination__item {
+  margin: 4px;
+}
+
+.pagination__item-btn {
+  width: 32px;
+  height: 32px;
+  background-color: #ffffff;
+  border: 1px solid #0d75ff;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #0d75ff;
+  cursor: pointer;
+}
+
+.pagination__item2 {
+  margin: 4px;
+}
+
+.pagination__item2-btn {
+  width: 32px;
+  height: 32px;
+  background-color: #ffffff;
+  border: 1px solid #dfe3e8;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #212b36;
+  cursor: pointer;
+}
+
+.pagination__next-btn {
+  padding: 4px;
+  border: none;
+  background-color: #ffffff;
+  border: 1px solid #dfe3e8;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 4px;
 }
 /*# sourceMappingURL=main.css.map */
