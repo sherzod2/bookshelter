@@ -89,8 +89,9 @@
                   <ul class="cards__list"></ul>
 
                   <div class="pagination">
-                    <button class="pagination__prev-btn">
+                    <button class="pagination__prev-btn disabled">
                       <img
+                        class="pagination__prev-img"
                         src="./images/pagination-prev.svg"
                         alt="prev button picture"
                         width="24"
@@ -102,13 +103,14 @@
                       <li class="pagination__item">
                         <button class="pagination__item-btn">1</button>
                       </li>
-                      <li class="pagination__item2">
-                        <button class="pagination__item2-btn">2</button>
+                      <li class="pagination__item">
+                        <button class="pagination__item-btn">2</button>
                       </li>
                     </ul>
 
                     <button class="pagination__next-btn">
                       <img
+                        class="pagination__next-img"
                         src="./images/pagination-next.svg"
                         alt="next button picture"
                         width="24"
@@ -117,7 +119,6 @@
                     </button>
                   </div>
                 </div>
-                <!-- ncnnnnnnnnnnnnn -->
               </div>
             </div>
           </div>
@@ -208,7 +209,11 @@
       </li>
     </template>
 
-    <!-- <template class="modal-template"></template> -->
+    <template class="template-pagination">
+      <li class="pagination__item">
+        <button class="pagination__item-btn">1</button>
+      </li>
+    </template>
 
     <template class="bookmark-template">
       <li class="bookmarks__item">

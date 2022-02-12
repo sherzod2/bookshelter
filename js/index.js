@@ -5,15 +5,26 @@ const elHeaderInput = document.querySelector(".header__input");
 const elSearchResultCounts = document.querySelector(".search-result");
 const elCardsList = document.querySelector(".cards__list");
 const elBookmarksList = document.querySelector(".bookmarks__list");
+const elPaginationList = document.querySelector(".pagination__list");
 const elTemplate = document.querySelector(".template").content;
+const elPaginationTemplate = document.querySelector(
+  ".template-pagination"
+).content;
 const elBookmarksTemplate =
   document.querySelector(".bookmark-template").content;
 const elModal = document.querySelector(".modal");
 const elOverlay = document.querySelector(".overlay");
 const elCloseBtn = document.querySelector(".modal__close");
+const elNewestBtn = document.querySelector(".hero__btn");
+const elPagination = document.querySelector(".pagination");
 
 const localToken = window.localStorage.getItem("token");
 let booksArr = [];
+let order = "relevance";
+let page = 2;
+let maxPage;
+let totalBooks;
+let elHeaderInputValue;
 
 let bookmarkLocalStorage = JSON.parse(window.localStorage.getItem("bookmarks"));
 let bookmarksArr = bookmarkLocalStorage || [];
@@ -43,7 +54,6 @@ const renderBooks = function (arr, node) {
       item.volumeInfo?.authors[0];
     clonedBookTemplate.querySelector(".cards__item-year").textContent =
       item.volumeInfo?.publishedDate;
-    // dataset
     clonedBookTemplate.querySelector(
       ".cards__item-bookmark-btn"
     ).dataset.bookmarkId = item.id;
@@ -94,6 +104,52 @@ const renderBookmarks = function (arr, node) {
   window.localStorage.setItem("bookmarks", JSON.stringify(bookmarksArr));
 };
 
+const renderPagination = function (totalBooks, node, page) {
+  const paginationFragment = document.createDocumentFragment();
+  node.innerHTML = null;
+  maxPage = Math.ceil(totalBooks / 10);
+
+  for (let i = 1; i <= maxPage; i++) {
+    const clonedPaginationTemplate = elPaginationTemplate.cloneNode(true);
+
+    clonedPaginationTemplate.querySelector(
+      ".pagination__item-btn"
+    ).textContent = i;
+
+    clonedPaginationTemplate.querySelector(
+      ".pagination__item-btn"
+    ).dataset.pageId = i;
+
+    if (i === page) {
+      clonedPaginationTemplate
+        .querySelector(".pagination__item-btn")
+        .classList.add("focus");
+
+      if (page === 1) {
+        document
+          .querySelector(".pagination__prev-btn")
+          .classList.add("disabled");
+      } else {
+        document
+          .querySelector(".pagination__prev-btn")
+          .classList.remove("disabled");
+      }
+    }
+
+    if (page === maxPage && i === maxPage) {
+      document.querySelector(".pagination__next-btn").classList.add("disabled");
+    } else {
+      document
+        .querySelector(".pagination__next-btn")
+        .classList.remove("disabled");
+    }
+
+    paginationFragment.appendChild(clonedPaginationTemplate);
+  }
+
+  node.appendChild(paginationFragment);
+};
+
 const openMoreInfo = function (book) {
   document.querySelector(".modal__title").textContent = book.volumeInfo?.title;
   document.querySelector(".modal__main-img").src =
@@ -131,38 +187,45 @@ document.addEventListener("keydown", function (evt) {
   }
 });
 
+elNewestBtn.addEventListener("click", () => {
+  order = "newest";
+  getBooks(booksArr, page, order);
+});
+
 renderBookmarks(bookmarksArr, elBookmarksList);
 
-const getBooks = async function (book) {
-  // try {
-  const response = await fetch(
-    `https://www.googleapis.com/books/v1/volumes?q=${book}`
-  );
+const getBooks = async function (book, page, order) {
+  try {
+    const response = await fetch(
+      `https://www.googleapis.com/books/v1/volumes?q=${book}&startIndex=${page}&orderBy=${order}`
+    );
 
-  const data = await response.json();
+    const data = await response.json();
 
-  console.log(data.items[1]);
+    totalBooks = data.totalItems;
 
-  booksArr = data.items;
+    booksArr = data.items;
 
-  elSearchResultCounts.textContent = data.totalItems;
+    renderPagination(totalBooks, elPaginationList, page);
 
-  if (booksArr.length > 0) {
-    renderBooks(data.items, elCardsList);
-  } else {
-    elCardsList.innerHTML = "Book not found";
+    elSearchResultCounts.textContent = maxPage;
+
+    if (booksArr.length > 0) {
+      renderBooks(data.items, elCardsList);
+    } else {
+      elCardsList.innerHTML = "Book not found";
+    }
+  } catch (err) {
+    alert(err);
   }
-  // } catch (err) {
-  //   alert(err);
-  // }
 };
 
-getBooks("java");
+getBooks("python", page, order);
 
 elHeaderInput.addEventListener("change", function () {
-  const elHeaderInputValue = elHeaderInput.value;
+  elHeaderInputValue = elHeaderInput.value;
 
-  getBooks(elHeaderInputValue);
+  getBooks(elHeaderInputValue, page, order);
 });
 
 elCardsList.addEventListener("click", (evt) => {
@@ -191,7 +254,6 @@ elCardsList.addEventListener("click", (evt) => {
 });
 
 elBookmarksList.addEventListener("click", (evt) => {
-  // console.log(evt.target.matches(".bookmarks__item-delete-btn"));
   if (evt.target.matches(".bookmarks__item-delete-img")) {
     const bookmarkDeleteBtnId = evt.target.dataset.bookmarkDeleteId;
 
@@ -203,19 +265,24 @@ elBookmarksList.addEventListener("click", (evt) => {
 
     window.localStorage.setItem("bookmarks", JSON.stringify(bookmarksArr));
     renderBookmarks(bookmarksArr, elBookmarksList);
+  } else if (evt.target.matches(".bookmarks__item-read-img")) {
+    const bookmarkReadBtnId = evt.target.dataset.bookmarkReadId;
+
+    const foundBookmarkBook = bookmarksArr.find((bookmark) => {
+      return bookmark.id === bookmarkReadBtnId;
+    });
   }
-  // else if (evt.target.matches(".bookmarks__item-read-img")) {
-  //   const bookmarkReadBtnId = evt.target.dataset.bookmarkReadId;
+});
 
-  //   const foundBookmarkBook = bookmarksArr.find((bookmark) => {
-  //     return bookmark.id === bookmarkReadBtnId;
-  //   });
-
-  //   console.log(foundBookmarkBook);
-
-  // bookmarksArr.splice(foundBookmarkBook, 1);
-
-  // window.localStorage.setItem("bookmarks", JSON.stringify(bookmarksArr));
-  // renderBookmarks(bookmarksArr, elBookmarksList);
-  // }
+elPagination.addEventListener("click", (evt) => {
+  if (evt.target.matches(".pagination__prev-img") && page !== 1) {
+    page--;
+    getBooks(elHeaderInputValue, page, order);
+  } else if (evt.target.matches(".pagination__next-img") && page !== maxPage) {
+    renderPagination(totalBooks, elPaginationList, ++page);
+    getBooks(elHeaderInputValue, page, order);
+  } else if (evt.target.matches(".pagination__item-btn")) {
+    page = evt.target.dataset.pageId * 1;
+    getBooks(elHeaderInputValue, page, order);
+  }
 });

@@ -4,22 +4,43 @@
   justify-content: center;
   padding: 14px 0 40px;
 
-  &__prev-btn {
-    padding: 4px;
-    border: none;
-    background-color: #919eab;
-    opacity: 0.5;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 4px;
-  }
+  // &__prev-btn {
+  //   padding: 4px;
+  //   border: none;
+  //   background-color: #919eab;
+  //   opacity: 0.5;
+  //   border-radius: 4px;
+  //   cursor: pointer;
+  //   margin: 4px;
+  // }
 
   &__list {
     display: flex;
     align-items: center;
-    justify-content: center;
     list-style: none;
+    margin-top: 18px;
+    overflow: auto;
+    max-width: 600px;
+    // background-color: red;
   }
+
+  // &__item {
+  //   margin: 4px;
+
+  //   &-btn {
+  //     width: 32px;
+  //     height: 32px;
+  //     background-color: #ffffff;
+  //     border: 1px solid #0d75ff;
+  //     border-radius: 4px;
+  //     font-weight: bold;
+  //     font-size: 14px;
+  //     line-height: 20px;
+  //     text-align: center;
+  //     color: #0d75ff;
+  //     cursor: pointer;
+  //   }
+  // }
 
   &__item {
     margin: 4px;
@@ -27,31 +48,9 @@
     &-btn {
       width: 32px;
       height: 32px;
-      // padding: 5px 4px;
-      background-color: #ffffff;
-      border: 1px solid #0d75ff;
-      border-radius: 4px;
-      // text
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 20px;
-      text-align: center;
-      color: #0d75ff;
-      cursor: pointer;
-    }
-  }
-
-  &__item2 {
-    margin: 4px;
-
-    &-btn {
-      width: 32px;
-      height: 32px;
-      // padding: 5px 4px;
       background-color: #ffffff;
       border: 1px solid #dfe3e8;
       border-radius: 4px;
-      // text
       font-weight: bold;
       font-size: 14px;
       line-height: 20px;
@@ -61,7 +60,8 @@
     }
   }
 
-  &__next-btn {
+  &__next-btn,
+  &__prev-btn {
     padding: 4px;
     border: none;
     background-color: #ffffff;
@@ -70,5 +70,31 @@
     border-radius: 4px;
     cursor: pointer;
     margin: 4px;
+    width: 32px;
+    height: 32px;
   }
+}
+
+.disabled {
+  padding: 4px;
+  border: none;
+  background-color: #919eab;
+  opacity: 0.5;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.focus {
+  width: 32px;
+  height: 32px;
+  background-color: #ffffff;
+  border: 1px solid #0d75ff;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #0d75ff;
+  cursor: pointer;
 }
